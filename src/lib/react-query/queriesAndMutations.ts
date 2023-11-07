@@ -175,13 +175,14 @@ export const useDeletePost = () => {
 export const useGetPosts = () => {
    return useInfiniteQuery({
        queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-        queryFn: getInfinitePosts as any,
-       getNextPageParam: (lastPage: any) => {
-            if (lastPage && lastPage.documents.length === 0) { return null; }
-           const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
+        queryFn: getInfinitePosts,
+       getNextPageParam: (lastPage ): number | null  => {
+            if (lastPage && lastPage.documents.length === 0) return null;
+           const lastId = parseInt(lastPage?.documents[lastPage?.documents.length - 1].$id!);
 
            return lastId
-        }
+        },
+        initialPageParam: 1
     })
 }
 
