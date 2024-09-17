@@ -22,10 +22,7 @@ const PostDetails = () => {
           <img src={post?.imageUrl} alt="post" className="post_details-img" />
           <div className="post_details-info">
             <div className="flex-between w-full">
-              <Link
-                to={`/profile/${post?.creator.$id}`}
-                className="flex items-center gap-3"
-              >
+              <Link to="#" className="flex items-center gap-3">
                 <img
                   src={
                     post?.creator?.imageUrl ||
@@ -65,8 +62,8 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={`${
-                    user.id !== post?.creator.$id && "ghost_details-delete_btn"
+                  className={`ghost_details-delete_btn ${
+                    user.id !== post?.creator.$id && "hidden"
                   }`}
                 >
                   <img

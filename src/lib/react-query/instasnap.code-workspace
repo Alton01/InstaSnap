@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "instasnap",
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
